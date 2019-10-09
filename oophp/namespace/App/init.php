@@ -9,7 +9,6 @@
 
 // require_once 'Service/user.php';
 
-
 spl_autoload_register(function( $class ){
 	// App\produk\User = ["App", "Produk", "User"]
 	$class = explode('\\', $class);
@@ -18,6 +17,7 @@ spl_autoload_register(function( $class ){
 });
 
 spl_autoload_register(function( $class ){
+	// App\Service\User = ["App", "Service", "User"]
 	$class = explode('\\', $class);
 	$class = end($class);
 	require_once __DIR__ . '/Service/' . $class . '.php';
